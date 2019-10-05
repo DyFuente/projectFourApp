@@ -1,13 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
-class App extends React.Component {
+
+const getUserFromServer = () =>
+  fetch('/api/user/').then(res => res.json())
+
+export default class App extends React.Component {
+
+  state = {
+    user: [],
+  }
+
+  componentDidMount = () => {
+    getUserFromServer().
+      then(user => {
+        this.setState({ user })
+      })
+  }
   render = () => (
-    <h1>"Hello Earth"</h1>
+    <div>
+      <ul>
+        {this.state.user.map(user => (
+          <li>
+            {user.userName} - {user.email}
+          </li>
+        ))}
+      </ul>
+    </div>
   )
-  
+
 }
-
-
-export default App;
