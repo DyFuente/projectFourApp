@@ -69,7 +69,7 @@ export default class HomePage extends React.Component {
       <ul>
         {this.state.user.map(user => (
           <li>
-            <h4 style={{color: "white"}} >{user.userName} - {user.email}</h4>
+            <h4 style={{color: "white"}} >{user.userName}</h4>
           </li>
         ))}
       </ul>

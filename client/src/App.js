@@ -19,22 +19,25 @@ class App extends Component {
           <Link to="/" className="navbar-brand">best of NETFLIX!</Link>
         </header>
         <nav className="nabar navbar-expand-lg navbar-light bg-light">
-          <div className="collapse navbar-collapse">
-            <ul className="navbar-nav mr-auto">
-              <a href="/">Home</a>
-              <a href="">TV Series</a>
-              <a href="">Movies</a>
-              <a href="">Documentary</a>
+          
+            <ul className="navline navbar-nav mr-auto">
+              <a href="#">Home</a>
+              <a href="#">TV Series</a>
+              <a href="#">Movies</a>
+              <a href="#">Documentary</a>
             </ul>
-          </div>
+    
         </nav>
+        <h1>Hello</h1>
         <br/>
         {/* I'm using react router to set the exact paths to my pages */}
+        <Switch>
           <Route exact path="/" component={HomePage}/>
           {/* <Route exact path="/single-user/:userId/recipes/createOneRecipe" component={CreateEntry}/> */}
           {/* <Route exact path="/single-recipe/recipe._id/recipes" component={EditRecipe}/>
           <Route exact path="/RecipePage" component={RecipePage}/>
           <Route exact path="/single-user/:userId/recipes" component={SingleUserRecipePage}/> */}
+        </Switch>
       </div>
       </Router>
     );
