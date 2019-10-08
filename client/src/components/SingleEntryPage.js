@@ -43,4 +43,3 @@ export default class getSingleEntry extends React.Component {
     }
 }
 
-

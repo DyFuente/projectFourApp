@@ -75,7 +75,7 @@ export default class HomePage extends React.Component {
     render = () => (
         <div style={{ color: "white" }}>
             Entry: <NewEntryForm />
-            <div className="thing-container">
+            <div className="mainMedium-container">
                 {this.state.entry.map(entry => (
                     <div key={entry.id}>
                         <Link to={`/${entry.id}/singleEntry/`}>
