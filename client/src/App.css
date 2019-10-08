@@ -33,7 +33,14 @@ li {
   display: inline;
 }
 
-.thing-container {
+.mainMedium-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.singleEntry-container {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -44,6 +51,20 @@ li {
   margin-right: 21px;
 }
 
+.mediumSingleEntry-container img {
+  height: 417px;
+}
+
+.medium-subtitleSingleEntry {
+  font-size: 20px;
+  color: #fff;
+}
+
+
+.medium-titleSingleEntry {
+  font-size: 14px;
+  color: #fff;
+}
 .medium-container img {
   height: 250px;
 }

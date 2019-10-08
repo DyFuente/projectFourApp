@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import HomePage from './components/HomePage.js'
 import NewEntryForm from './components/NewEntryForm.js'
+import SingleEntryPage from './components/SingleEntryPage'
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
+
 // import RecipePage from './components/RecipePage.js';
 // import SingleUserRecipePage from './components/SingleUserRecipePage.js'
 // import CreateRecipe from './components/CreateRecipe.js'
@@ -22,10 +24,10 @@ class App extends Component {
         <nav className="nabar navbar-expand-lg navbar-light bg-light">
           
             <ul className="navline navbar-nav mr-auto">
-              <a href="#">Home</a>
-              <a href="#">TV Series</a>
-              <a href="#">Movies</a>
-              <a href="#">Documentary</a>
+              <a href="">Home</a>
+              <a href="">TV Series</a>
+              <a href="">Movies</a>
+              <a href="">Documentary</a>
             </ul>
     
         </nav>
@@ -33,10 +35,8 @@ class App extends Component {
         {/* I'm using react router to set the exact paths to my pages */}
         <Switch>
           <Route exact path="/" component={HomePage}/>
-          <Route exact path="/newEntry/:userId" component={NewEntryForm}/>
-          {/* <Route exact path="/single-recipe/recipe._id/recipes" component={EditRecipe}/>
-          <Route exact path="/RecipePage" component={RecipePage}/>
-          <Route exact path="/single-user/:userId/recipes" component={SingleUserRecipePage}/> */}
+          <Route exact path="/newEntry/:id" component={NewEntryForm}/>
+          <Route exact path="/:id/singleEntry" component={SingleEntryPage}/>
         </Switch>
       </div>
       </Router>
