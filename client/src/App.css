@@ -2,6 +2,10 @@ body {
   background-color: black !important;
 }
 
+li {
+  list-style-type: none;
+}
+
 .App {
   text-align: center;
 }
@@ -27,4 +31,30 @@ body {
 
 .navline{
   display: inline;
+}
+
+.thing-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.medium-container {
+  margin-right: 21px;
+}
+
+.medium-container img {
+  height: 250px;
+}
+
+.medium-container .medium-subtitle {
+  font-size: 20px;
+  color: #fff;
+}
+
+.medium-container .medium-title {
+  font-size: 14px;
+  color: #fff;
+
 }

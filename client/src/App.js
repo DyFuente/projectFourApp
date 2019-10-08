@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import HomePage from './components/HomePage.js'
+import NewEntryForm from './components/NewEntryForm.js'
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 // import RecipePage from './components/RecipePage.js';
@@ -28,12 +29,11 @@ class App extends Component {
             </ul>
     
         </nav>
-        <h1>Hello</h1>
         <br/>
         {/* I'm using react router to set the exact paths to my pages */}
         <Switch>
           <Route exact path="/" component={HomePage}/>
-          {/* <Route exact path="/single-user/:userId/recipes/createOneRecipe" component={CreateEntry}/> */}
+          <Route exact path="/newEntry/:userId" component={NewEntryForm}/>
           {/* <Route exact path="/single-recipe/recipe._id/recipes" component={EditRecipe}/>
           <Route exact path="/RecipePage" component={RecipePage}/>
           <Route exact path="/single-user/:userId/recipes" component={SingleUserRecipePage}/> */}
