@@ -24,7 +24,7 @@ class App extends Component {
         <nav className="nabar navbar-expand-lg navbar-light bg-light">
           
             <ul className="navline navbar-nav mr-auto">
-              <a href="">Home</a>
+              <a href="http://localhost:3000/newEntry/1/">Home</a>
               <a href="">TV Series</a>
               <a href="">Movies</a>
               <a href="">Documentary</a>

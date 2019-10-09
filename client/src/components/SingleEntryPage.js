@@ -5,7 +5,7 @@ class NewNoteForm extends React.Component {
     state = {
         name: "",
         comment: "",
-        entry: `id`,
+        entry: this.props.entryId
     }
     handleInput = (evnt) => {
         let newNote = { ...this.state }
@@ -15,6 +15,7 @@ class NewNoteForm extends React.Component {
     handleSubmit = (evnt) => {
         evnt.preventDefault();
         this.addNewNote(this.state)
+        this.setState({ name: "", comment: "" })
     }
 
     addNewNote = (newNote) =>
@@ -34,15 +35,15 @@ class NewNoteForm extends React.Component {
                 placeholder="Enter name"
             />
             <br />
-        
-            <textarea 
-            rows="4" 
-            cols="50" 
-            type="text"
-            name="comment" 
-            onChange={this.handleInput}
-            value={this.state.comment}
-            form="usrform">
+
+            <textarea
+                rows="4"
+                cols="100"
+                type="text"
+                name="comment"
+                onChange={this.handleInput}
+                value={this.state.comment}
+                form="usrform">
                 Enter text here...</textarea>
             <br />
             <input type="submit" value="Create Note" />
@@ -54,11 +55,9 @@ export default class getSingleEntry extends React.Component {
 
     state = {
         singleEntry: {
-            id: "",
-            title: "",
-            art: "",
-            medium: ""
+            id: ""
         },
+        notes: []
     }
 
     getSingleEntry = () =>
@@ -70,10 +69,24 @@ export default class getSingleEntry extends React.Component {
 
             }).then(res => res.json())
 
+    getNotesForSingleEntry = () =>
+        fetch(`/api/notes/`,
+            {
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify()
+
+            }).then(res => res.json())
+
+
     componentDidMount = () => {
         this.getSingleEntry().
             then(singleEntry => {
                 this.setState({ singleEntry })
+            })
+        this.getNotesForSingleEntry().
+            then(allNotes => {
+                this.setState({ notes: allNotes })
             })
     }
 
@@ -82,31 +95,37 @@ export default class getSingleEntry extends React.Component {
             //I'm using the render method to get all the recipes for one user
             <div>
 
-            <div className="singleEntry-container">
-                <div className="mediumSingleEntry-container">
-                    <br />
-                    <div className="medium-subtitleSingleEntry">{this.state.singleEntry.title}</div>
-                    <div className="medium-titleSingleEntry">{this.state.singleEntry.medium}</div>
-                    <img src={this.state.singleEntry.art} />
+                <div className="singleEntry-container">
+                    <div className="mediumSingleEntry-container">
+                        <br />
+                        <div className="medium-titleSingleEntry">{this.state.singleEntry.title}</div>
+                        <div className="medium-subtitleSingleEntry">{this.state.singleEntry.medium}</div>
+                        <img src={this.state.singleEntry.art} />
+                    </div>
                 </div>
-            </div>
-            <NewNoteForm />
+                <br />
+                <br />
+                <br />
+                <NewNoteForm
+                    entryId={this.props.match.params.id}
+                    getNotesForSingleEntry={this.getNotesForSingleEntry}
+                />
+                <br/>
+                <div>
+                    {this.state.notes.map(notes => (
+                    //   if(entryId === entry)
+                    //      return ()
+                        <div>
+                            <div className="notes-titleSingleEntry" >From: {notes.name}</div>
+                            <div className="notes-subtitleSingleEntry" >{notes.comment}</div>
+                            <br/>
+                        </div>
+
+                    ))}
+                </div>
             </div>
         )
     }
 
-    render = () => (
-        
-            <div>
-            {this.state.notes.map(notes => (
-                <div>
-                    <div>{notes.name}</div>
-                    <div>{notes.comment}</div>
-                </div>
-                
-            ))}
-            </div>
-        
-    )
 }
 
