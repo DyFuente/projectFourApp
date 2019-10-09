@@ -94,5 +94,19 @@ export default class getSingleEntry extends React.Component {
             </div>
         )
     }
+
+    render = () => (
+        
+            <div>
+            {this.state.notes.map(notes => (
+                <div>
+                    <div>{notes.name}</div>
+                    <div>{notes.comment}</div>
+                </div>
+                
+            ))}
+            </div>
+        
+    )
 }
 
