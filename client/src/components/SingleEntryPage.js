@@ -106,7 +106,10 @@ export default class getSingleEntry extends React.Component {
                 <br />
                 <br />
                 <br />
-                
+                <NewNoteForm
+                    entryId={this.props.match.params.id}
+                    getNotesForSingleEntry={this.getNotesForSingleEntry}
+                />
                 <br/>
                 <div>
                     {this.state.notes.map(note => {
