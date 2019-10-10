@@ -57,7 +57,7 @@ class NewEntryForm extends React.Component {
                 placeholder="Enter Link to Art"
             />
             <br />
-            <input type="submit" value="Create Entry" />
+            <input type="submit" value="Create New Entry" />
         </form>
     )
 }
