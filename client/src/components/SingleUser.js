@@ -21,7 +21,7 @@ export default class SingleUser extends Component {
     render () {
         return (
             <div style={{ color: "white" }}>
-                Entry: <NewEntryForm />
+                Entry: <NewEntryForm userId={this.props.match.params.id}/>
                 <div className="mainMedium-container">
                     {this.state.entry.map(entry => {
                         const { id } = this.props.match.params;

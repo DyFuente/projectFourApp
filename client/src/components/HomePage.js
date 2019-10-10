@@ -1,9 +1,8 @@
 import React from 'react';
-// import { BrowserRouter as Link, Router, Switch, Route } from 'react-router-dom'
-// import '../App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import NewEntryForm from './NewEntryForm.js'
 import { Link } from 'react-router-dom';
+
 
 const getUserFromServer = () =>
 

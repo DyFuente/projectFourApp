@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-// import '../App.css';
+import '../App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
+
 
 
 
@@ -11,7 +12,8 @@ class NewEntryForm extends React.Component {
         medium: "",
         title: "",
         art: "",
-        user: this.props.userid
+        user: this.props.userId
+
     }
     handleInput = (evnt) => {
         let newEntry = { ...this.state }
@@ -20,6 +22,7 @@ class NewEntryForm extends React.Component {
     }
     handleSubmit = (evnt) => {
         evnt.preventDefault();
+        console.log(this.state)
         this.addNewEntry(this.state)
     }
 
