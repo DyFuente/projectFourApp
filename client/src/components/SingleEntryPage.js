@@ -112,16 +112,19 @@ export default class getSingleEntry extends React.Component {
                 />
                 <br/>
                 <div>
-                    {this.state.notes.map(notes => (
-                    //   if(entryId === entry)
-                    //      return ()
+                    {this.state.notes.map(note => {
+                        const { id } = this.props.match.params;
+            
+                        if(note.entry != id) {
+                            return null
+                        }
+                        return (
                         <div>
-                            <div className="notes-titleSingleEntry" >From: {notes.name}</div>
-                            <div className="notes-subtitleSingleEntry" >{notes.comment}</div>
+                            <div className="notes-titleSingleEntry" >From: {note.name}</div>
+                            <div className="notes-subtitleSingleEntry" >{note.comment}</div>
                             <br/>
-                        </div>
-
-                    ))}
+                        </div>)
+                    })}
                 </div>
             </div>
         )

@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom'
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
-const getEntryFromServer = () => fetch('/api/entry/').then(response => response.json())
+
 
 class NewEntryForm extends React.Component {
     state = {
         medium: "",
         title: "",
         art: "",
-        user: 1
+        user: this.props.userid
     }
     handleInput = (evnt) => {
         let newEntry = { ...this.state }
@@ -59,36 +59,4 @@ class NewEntryForm extends React.Component {
     )
 }
 
-
-export default class HomePage extends React.Component {
-
-    state = {
-        entry: [],
-    }
-
-    componentDidMount = () => {
-        getEntryFromServer().
-            then(entry => {
-                this.setState({ entry })
-            })
-    }
-    render = () => (
-        <div style={{ color: "white" }}>
-            Entry: <NewEntryForm />
-            <div className="mainMedium-container">
-                {this.state.entry.map(entry => (
-                    <div key={entry.id}>
-                        <Link to={`/${entry.id}/singleEntry/`}>
-                            <div className="medium-container">
-                                <div className="medium-subtitle">{entry.title}</div>
-                                <div className="medium-title">{entry.medium}</div>
-                                <img src={entry.art} alt='movie' />
-                            </div>
-                        </Link>
-                    </div>
-                ))}
-            </div>
-        </div>
-    )
-
-}
+export default NewEntryForm;

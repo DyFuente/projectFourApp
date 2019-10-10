@@ -3,6 +3,7 @@ import React from 'react';
 // import '../App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import NewEntryForm from './NewEntryForm.js'
+import { Link } from 'react-router-dom';
 
 const getUserFromServer = () =>
 
@@ -69,7 +70,9 @@ export default class HomePage extends React.Component {
       <ul>
         {this.state.user.map(user => (
           <li>
+            <Link to={`/newEntry/${user.id}/`}>
             <h4 style={{color: "white"}} >{user.userName}</h4>
+            </Link>
           </li>
         ))}
       </ul>
