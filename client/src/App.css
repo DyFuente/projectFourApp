@@ -37,6 +37,7 @@ li {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 100px;
 
 }
 
@@ -49,6 +50,7 @@ li {
 
 .medium-container {
   margin-right: 21px;
+  margin-bottom: 100px;
 }
 
 .mediumSingleEntry-container img {
@@ -100,5 +102,9 @@ header {
 }
 
 .footer {
-
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  width: 77%;
+  height: 2.5rem;
 }
