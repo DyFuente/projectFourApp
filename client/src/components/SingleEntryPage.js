@@ -121,7 +121,7 @@ export default class getSingleEntry extends React.Component {
                         return (
                         <div>
                             <div className="notes-titleSingleEntry" >From: {note.name}</div>
-                            <div className="notes-subtitleSingleEntry" >{note.comment}</div>
+                            
                             <br/>
                         </div>)
                     })}
