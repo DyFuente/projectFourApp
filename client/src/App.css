@@ -101,10 +101,3 @@ header {
   justify-content: center;
 }
 
-.footer {
-  background-color: white;
-  position: fixed;
-  bottom: 0;
-  width: 77%;
-  height: 2.5rem;
-}

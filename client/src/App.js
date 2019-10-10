@@ -30,7 +30,7 @@ class App extends Component {
             <Route exact path="/newEntry/:id" component={SingleUser} />
             <Route exact path="/:id/singleEntry" component={SingleEntryPage} />
           </Switch>
-          
+          <Footer /> 
         </div>
       </Router>
 
