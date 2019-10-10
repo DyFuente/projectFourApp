@@ -38,7 +38,7 @@ export default class SingleUser extends Component {
                                 <div className="medium-container">
                                     <div className="medium-subtitle">{entry.title}</div>
                                     <div className="medium-title">{entry.medium}</div>
-                                    <img src={entry.art} alt='movie' />
+                                    <img src={entry.art} alt='tv series, movie, documentary' />
                                 </div>
                             </Link>
                         </div>
