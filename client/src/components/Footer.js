@@ -6,7 +6,7 @@ export default class Footer extends Component {
         return (
             <footer className="footer">
                 <div>
-                    <a href target="_blank">Netflix</a>
+                    <a href="https://www.netflix.com/" target="_blank">Netflix</a>
                 </div>
             </footer>
         )
