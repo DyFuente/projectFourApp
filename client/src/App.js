@@ -13,7 +13,7 @@ class App extends Component {
       <Router>
         <div className="container test">
           <header>
-            <img src="/projectFourLogo.jpg" />
+            <img src="https://i.imgur.com/HSfI9jV.png" />
 
           </header>
           <nav className="nabar navbar-expand-lg navbar-light bg-light">
